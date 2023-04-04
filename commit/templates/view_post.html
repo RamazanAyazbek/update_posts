@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- <h1>Updated page -->
+<!-- <p style="font-weight: 700; font-size: 30px;">{{post.title}}</p>
+<hr>
+<p style="font-weight: 700; font-size: 20px;">{{post.desc}}</p>
+<br> -->
+<h1>{{ post.title }}</h1>
+<p>{{ post.desc }}</p>
+<hr>
+<!-- {% for version in versions %}
+<h3>Version {{ version.version_number }}</h3>
+<p>{{ version.desc }}</p>
+<hr>
+{% endfor %} -->
+<h2>Versions ({{ versions.count }})</h2>
+
+{% for version in versions %}
+  <h3>Version {{ version.version_number }}</h3>
+  <p>{{ version.desc }}</p>
+  <hr>
+{% endfor %}
+
+
+
+<a href="{% url 'update_post' post.id%}">Update</a>
+{% endblock %}

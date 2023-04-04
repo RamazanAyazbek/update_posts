@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block content%}
+{% comment %} <form action="{% url 'view_post' post.id %}" method="POST">
+    {% csrf_token %}
+    <input type="text"  name="title" class="title" placeholder="title">
+    <textarea name="desc" id="" cols="30" rows="10" value="write"></textarea>
+    <button type="submit">submit</button>
+  </form> {% endcomment %}
+
+  <h1>Update Post</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Post</button>
+  </form>
+{% endblock %}
